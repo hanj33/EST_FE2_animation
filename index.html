@@ -120,12 +120,18 @@
         animation-fill-mode: forwards;
         animation-delay: 1s;
       }
+      div:hover {
+        cursor: grab;
+      }
 
       div .face {
         width: 600px;
         height: 600px;
         position: absolute;
         background-image: url(src/001_01-눈썹.png);
+      }
+      div:active {
+        cursor: grabbing;
       }
       div:active .face {
         width: 600px;
@@ -209,6 +215,7 @@
           <img src="src/002-몸.png" alt="" />
         </div>
       </div>
+      <img src="src/bg.png" alt="" />
     </div>
   </body>
 </html>
