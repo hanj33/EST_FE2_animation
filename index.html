@@ -6,8 +6,52 @@
     <title>천하제일애니메이션</title>
     <style>
       .chara {
-        width: 400px;
-        height: 600px;
+        width: 235px;
+        height: 235px;
+
+        display: inline-block;
+        position: relative;
+      }
+      div img {
+        position: absolute;
+      }
+      /* --------------- 얼굴 --------------- */
+      /* --------------- 눈 --------------- */
+      @keyframes eye-top-blink {
+        50% {
+          transform: translate(0, 20px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+      @keyframes eye-under-blink {
+        50% {
+          transform: translate(0, -9px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+      div .eye {
+        position: absolute;
+
+        z-index: 1000;
+      }
+      div .eye .eye_top {
+        animation-name: eye-top-blink;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(0.77, 0, 0.29, 0.98);
+      }
+      div .eye .eye_under {
+        animation-name: eye-under-blink;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(0.77, 0, 0.29, 0.98);
+      }
+      .mouth {
+        z-index: 900;
       }
     </style>
   </head>
@@ -16,8 +60,14 @@
       <div class="head">
         <div class="face">
           <div class="eye">
-            <img src="" alt="" />
+            <img src="src/001_01 흰자.png" alt="" class="eye eye_back" />
+            <img src="src/001_01 눈동자.png" alt="" class="eye eyeball" />
+            <img src="src/001_01 눈아래.png" alt="" class="eye eye_under" />
+            <img src="src/001_01 눈위.png" alt="" class="eye eye_top" />
+            <img src="src/001_01 눈썹.png" alt="" class="eye eyebrow" />
           </div>
+          <img src="src/001_01 입.png" alt="" class="face mouth" />
+          <img src="src/001 얼굴.png" alt="" />
         </div>
       </div>
     </div>
