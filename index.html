@@ -42,6 +42,8 @@
       }
 
       div .head .hair-back {
+        position: absolute;
+        z-index: -1000;
         animation-name: breath-hair;
         animation-duration: 4s;
         animation-iteration-count: infinite;
@@ -87,14 +89,12 @@
 
         z-index: 1000;
       }
-      div .neck {
+      div .face .neck {
         position: absolute;
 
-        z-index: 900;
-
+        z-index: 600;
       }
       div .eye .eye_top {
-
         animation-name: eye-top-blink;
         animation-duration: 2s;
         animation-iteration-count: infinite;
@@ -121,23 +121,17 @@
         animation-delay: 1s;
       }
 
-      /* .mouth {
-        position: absolute;
-        z-index: 800;
-      } */
-
       div .face {
         width: 600px;
         height: 600px;
         position: absolute;
         background-image: url(src/001_01-눈썹.png);
-
       }
       div:active .face {
         width: 600px;
         height: 600px;
         position: absolute;
-        z-index: 1200;
+        z-index: 1000;
 
         background-image: url(src/001_01-표정333.png);
         background-size: 600px 600px;
@@ -148,7 +142,7 @@
       /* --------------- 몸 --------------- */
       @keyframes breath-body {
         50% {
-          transform: translate(0, -3px);
+          transform: translate(0, -6px);
         }
         100% {
           transform: translate(0, 0);
@@ -166,54 +160,55 @@
       }
 
       .body {
-        z-index: 600;
+        position: absolute;
+        z-index: 950;
+
         animation-name: breath-body;
         animation-duration: 4s;
         animation-iteration-count: infinite;
       }
 
       .body .arm {
-        z-index: -800;
+        position: absolute;
+        z-index: -200;
       }
+
       .body .arm-right {
-        /* transform-origin: top right; */
         animation-name: breath-arm-right;
         animation-duration: 4s;
         animation-iteration-count: infinite;
-
       }
       .body .arm-left {
         animation-name: breath-arm-left;
         animation-duration: 4s;
         animation-iteration-count: infinite;
       }
-
     </style>
   </head>
   <body>
     <div class="chara">
       <div class="head">
-        <img src="src/001_02-앞머리.png" alt="" class="hair hair-front">
-        <img src="src/001_02-옆머리.png" alt="" class="hair hair-side">
+        <img src="src/001_02-앞머리.png" alt="" class="hair hair-front" />
+        <img src="src/001_02-옆머리.png" alt="" class="hair hair-side" />
         <div class="face">
           <div class="eye">
             <img src="src/001_01-흰자.png" alt="" class="eye eye_back" />
             <img src="src/001_01-눈동자.png" alt="" class="eye eyeball" />
             <img src="src/001_01-눈아래.png" alt="" class="eye eye_under" />
             <img src="src/001_01-눈위.png" alt="" class="eye eye_top" />
-            <div class="eye eyebrow" >    
-            </div>
-            <div class="face mouth">  </div>
+            <div class="eye eyebrow"></div>
+            <div class="face mouth"></div>
             <img src="src/001-얼굴.png" alt="" />
           </div>
-        <img src="src/001_01-목.png" alt="" class="neck">
+        </div>
+        <img src="src/001_01-목.png" alt="" class="neck" />
+        <img src="src/001_02-뒷머리.png" alt="" class="hair-back" />
+        <div class="body">
+          <img src="src/002-몸-오른팔.png" alt="" class="body arm arm-right" />
+          <img src="src/002-몸-왼팔.png" alt="" class="body arm arm-left" />
+          <img src="src/002-몸.png" alt="" />
+        </div>
       </div>
-      <img src="src/001_02-뒷머리.png" alt="" class="hair-back">
-    </div>
-    <div class="body">
-      <img src="src/002-몸-오른팔.png" alt="" class="body arm arm-right">
-      <img src="src/002-몸-왼팔.png" alt="" class="body arm arm-left">
-      <img src="src/002-몸.png" alt="">
     </div>
   </body>
 </html>
