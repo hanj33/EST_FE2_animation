@@ -16,6 +16,42 @@
         position: absolute;
       }
       /* --------------- 얼굴 --------------- */
+      @keyframes breath {
+        50% {
+          transform: translate(0, 4px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+      /* --------------- 머리 --------------- */
+      @keyframes breath-hair {
+        50% {
+          transform: scale(1.03, 1);
+        }
+        100% {
+          transform: scale(1, 1);
+        }
+      }
+      div .head .hair-front {
+        position: absolute;
+
+        z-index: 1500;
+      }
+      div .head .hair-side {
+        position: absolute;
+
+        z-index: 1400;
+      }
+
+      div .head .hair-back {
+        animation-name: breath-hair;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+
+
+      }
+
       /* --------------- 눈 --------------- */
       @keyframes eye-top-blink {
         50% {
@@ -33,12 +69,37 @@
           transform: translate(0, 0);
         }
       }
+      @keyframes unhappy {
+        100% {
+          width: 600px;
+          height: 600px;
+          background-size: 600px 600px;
+          background-repeat: no-repeat;
+          object-fit: contain;
+
+          background-image: url(src/001_01-눈썹2222.png);
+        }
+      }
+
+      div .head {
+        animation-name: breath;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+      }
+
       div .eye {
         position: absolute;
 
         z-index: 1000;
       }
+      div .neck {
+        position: absolute;
+
+        z-index: 900;
+
+      }
       div .eye .eye_top {
+
         animation-name: eye-top-blink;
         animation-duration: 2s;
         animation-iteration-count: infinite;
@@ -50,26 +111,87 @@
         animation-iteration-count: infinite;
         animation-timing-function: cubic-bezier(0.77, 0, 0.29, 0.98);
       }
-      .mouth {
-        z-index: 900;
+      div .eye .eyebrow {
+        width: 600px;
+        height: 600px;
+        background-image: url(src/001_01-눈썹.png);
+        background-size: 600px 600px;
+        background-repeat: no-repeat;
+        object-fit: contain;
+      }
+      div:hover .eye .eyebrow {
+        animation-name: unhappy;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 1s;
+      }
+
+      /* .mouth {
+        position: absolute;
+        z-index: 800;
+      } */
+
+      div .face {
+        width: 600px;
+        height: 600px;
+        position: absolute;
+        background-image: url(src/001_01-눈썹.png);
+
+      }
+      div:active .face {
+        width: 600px;
+        height: 600px;
+        position: absolute;
+        z-index: 1200;
+
+        background-image: url(src/001_01-표정333.png);
+        background-size: 600px 600px;
+        background-repeat: no-repeat;
+        object-fit: contain;
+      }
+
+      /* --------------- 몸 --------------- */
+      @keyframes breath-body {
+        50% {
+          transform: translate(0, -3px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+
+      .body {
+        position: absolute;
+        z-index: 950;
+        animation-name: breath-body;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+
       }
     </style>
   </head>
   <body>
     <div class="chara">
       <div class="head">
+        <img src="src/001_02-앞머리.png" alt="" class="hair hair-front">
+        <img src="src/001_02-옆머리.png" alt="" class="hair hair-side">
         <div class="face">
           <div class="eye">
-            <img src="src/001_01 흰자.png" alt="" class="eye eye_back" />
-            <img src="src/001_01 눈동자.png" alt="" class="eye eyeball" />
-            <img src="src/001_01 눈아래.png" alt="" class="eye eye_under" />
-            <img src="src/001_01 눈위.png" alt="" class="eye eye_top" />
-            <img src="src/001_01 눈썹.png" alt="" class="eye eyebrow" />
+            <img src="src/001_01-흰자.png" alt="" class="eye eye_back" />
+            <img src="src/001_01-눈동자.png" alt="" class="eye eyeball" />
+            <img src="src/001_01-눈아래.png" alt="" class="eye eye_under" />
+            <img src="src/001_01-눈위.png" alt="" class="eye eye_top" />
+            <div class="eye eyebrow" >    
+            </div>
+            <div class="face mouth">  </div>
+            <img src="src/001-얼굴.png" alt="" />
           </div>
-          <img src="src/001_01 입.png" alt="" class="face mouth" />
-          <img src="src/001 얼굴.png" alt="" />
-        </div>
+        <img src="src/001_01-목.png" alt="" class="neck">
       </div>
+      <img src="src/001_02-뒷머리.png" alt="" class="hair hair-back">
+    </div>
+    <div class="body">
+      <img src="src/002-몸.png" alt="">
     </div>
   </body>
 </html>
