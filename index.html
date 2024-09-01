@@ -33,14 +33,11 @@
           transform: scale(1, 1);
         }
       }
-      div .head .hair-front {
-        position: absolute;
 
+      div .head .hair-front {
         z-index: 1500;
       }
       div .head .hair-side {
-        position: absolute;
-
         z-index: 1400;
       }
 
@@ -48,8 +45,6 @@
         animation-name: breath-hair;
         animation-duration: 4s;
         animation-iteration-count: infinite;
-
-
       }
 
       /* --------------- 눈 --------------- */
@@ -159,15 +154,40 @@
           transform: translate(0, 0);
         }
       }
+      @keyframes breath-arm-right {
+        50% {
+          transform: rotate(3deg);
+        }
+      }
+      @keyframes breath-arm-left {
+        50% {
+          transform: rotate(-3deg);
+        }
+      }
 
       .body {
-        position: absolute;
-        z-index: 950;
+        z-index: 600;
         animation-name: breath-body;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+      }
+
+      .body .arm {
+        z-index: -800;
+      }
+      .body .arm-right {
+        /* transform-origin: top right; */
+        animation-name: breath-arm-right;
         animation-duration: 4s;
         animation-iteration-count: infinite;
 
       }
+      .body .arm-left {
+        animation-name: breath-arm-left;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+      }
+
     </style>
   </head>
   <body>
@@ -188,9 +208,11 @@
           </div>
         <img src="src/001_01-목.png" alt="" class="neck">
       </div>
-      <img src="src/001_02-뒷머리.png" alt="" class="hair hair-back">
+      <img src="src/001_02-뒷머리.png" alt="" class="hair-back">
     </div>
     <div class="body">
+      <img src="src/002-몸-오른팔.png" alt="" class="body arm arm-right">
+      <img src="src/002-몸-왼팔.png" alt="" class="body arm arm-left">
       <img src="src/002-몸.png" alt="">
     </div>
   </body>
